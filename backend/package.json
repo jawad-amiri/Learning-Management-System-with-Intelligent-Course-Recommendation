@@ -1,0 +1,28 @@
+{
+  "name": "learning-management-system-rule-based-ai",
+  "version": "1.0.0",
+  "description": "Learning Management System with Rule-Based Intelligent Course Recommendation",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Jawad Amiri",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.0.0",
+    "@mui/material": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "pdfkit": "^0.17.2",
+    "pg": "^8.11.5",
+    "qrcode": "^1.5.4"
+  }
+}
