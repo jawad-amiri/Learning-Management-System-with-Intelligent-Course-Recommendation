@@ -295,7 +295,7 @@ Through this project, I gained practical experience in:
 Computer Engineering Graduate
 
 GitHub:
-https://github.com/yourusername
+https://github.com/jawad-amiri
 
 ---
 
