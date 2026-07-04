@@ -1,52 +1,51 @@
-# Learning-Management-System-with-Intelligent-Course-Recommendation
+# BAMIKA – Learning Management System (LMS)
 
-A full-stack Learning Management System (LMS) developed as my Computer Engineering graduation project. This application provides a modern platform for managing online courses, student enrollments, learning progress, and instructor interactions through a secure role-based system.
+> A modern, full-stack Learning Management System (LMS) developed as my Computer Engineering graduation project using the PERN stack (PostgreSQL, Express.js, React, Node.js).
 
-The project demonstrates practical knowledge of full-stack web development, RESTful application architecture, authentication, database design, and responsive user interface development.
-
----
-
-## Project Overview
-
-This LMS is designed to simplify the management of online learning by providing separate dashboards and functionalities for administrators, teachers, and students.
-
-The system allows instructors to publish and manage courses while enabling students to enroll, track their learning progress, and interact through comments.
+BAMIKA is designed to provide a complete online learning platform where administrators, instructors, and students can efficiently manage courses, learning materials, enrollments, and learning progress through a secure and responsive web application.
 
 ---
 
-## Key Features
+# Project Overview
 
-### User Authentication
+BAMIKA was developed to address the need for a centralized, user-friendly, and scalable e-learning platform. The system streamlines course management, student enrollment, content delivery, and progress tracking while implementing secure authentication and role-based authorization.
+
+The application follows modern software engineering principles, including layered architecture, RESTful API design, reusable frontend components, and clean code practices.
+
+---
+
+# Key Features
+
+## Authentication & Authorization
 
 - Secure user registration and login
-- JWT-based authentication
+- JWT Authentication
 - Password hashing
-- Protected routes
-- Role-based authorization
+- Protected API routes
+- Role-Based Access Control (RBAC)
 
 ---
 
-### Role Management
+## User Roles
 
-Three different user roles are supported:
+The system supports multiple user roles with different permissions.
 
-- Administrator
+- Super Admin
+- Admin
 - Teacher
 - Student
 
-Each role has its own dashboard and permissions.
-
 ---
 
-### Course Management
+## Course Management
 
-Teachers can:
+Teachers and administrators can:
 
 - Create courses
-- Edit course information
+- Update course information
 - Delete courses
-- Upload course details
-- Manage enrolled students
+- Publish learning content
+- Organize course materials
 
 Students can:
 
@@ -56,69 +55,119 @@ Students can:
 
 ---
 
-### Enrollment System
+## Course Sections
 
-- Student course enrollment
-- Persistent enrolled-course tracking
-- Individual course access
-- Enrollment validation
-
----
-
-### Learning Progress Tracking
-
-- Student progress monitoring
-- Teacher-controlled progress updates
-- Progress percentage display
-- Visual progress indicators
+- Create multiple sections per course
+- Organize learning content
+- Structured course navigation
 
 ---
 
-### Comment System
+## Video Management
+
+- Upload course videos
+- Manage educational content
+- Watch tracking
+- Video progress recording
+
+---
+
+## Enrollment System
 
 Students can:
 
-- Post comments
+- Enroll in available courses
+- View enrolled courses
+- Continue learning
+- Track completed courses
+
+---
+
+## Learning Progress Tracking
+
+The system records student learning progress, allowing users to continue where they previously stopped.
+
+Features include:
+
+- Progress percentage
+- Course completion tracking
+- Learning history
+- Video watch tracking
+
+---
+
+## Comment System
+
+Students can:
+
+- Comment on courses
 - Participate in discussions
-- Interact with course content
+- Interact with instructors
 
 ---
 
-### Recommendation Engine
+## Course Like System
 
-A rule-based recommendation system suggests courses based on user interests and learning behavior.
+Students can:
 
----
-
-### Responsive User Interface
-
-- Bootstrap-based responsive design
-- Modern dashboard layouts
-- Mobile-friendly interface
-- Clean navigation
-- User-friendly experience
+- Like courses
+- Save preferred learning content
 
 ---
 
-## Technologies Used
+## File Management
 
-### Backend
+Teachers can upload learning resources such as:
+
+- PDF documents
+- Assignments
+- Additional course materials
+
+---
+
+## Certificate Management
+
+The system supports course completion certificates for students who successfully finish their courses.
+
+---
+
+## Intelligent Recommendation System
+
+One of the main features of BAMIKA is its **Rule-Based Recommendation System**.
+
+The recommendation engine suggests relevant courses based on predefined rules and user interactions, helping students discover suitable learning materials more efficiently.
+
+---
+
+# Technology Stack
+
+## Frontend
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Axios
+
+---
+
+## Backend
 
 - Node.js
 - Express.js
-- MongoDB
-- Mongoose
-- JSON Web Token (JWT)
+- RESTful API
+- JWT Authentication
 
-### Frontend
+---
 
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-- EJS Template Engine
+## Database
 
-### Tools
+- PostgreSQL
+
+---
+
+## Development Tools
 
 - Git
 - GitHub
@@ -126,179 +175,296 @@ A rule-based recommendation system suggests courses based on user interests and 
 
 ---
 
-## Project Structure
+# Project Architecture
 
 ```
-LMS/
-│
-├── controllers/
-├── middleware/
-├── models/
-├── public/
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── routes/
-├── views/
-├── config/
-├── app.js
-├── package.json
-└── README.md
+React + Vite + TypeScript
+            │
+         Axios
+            │
+      RESTful API
+            │
+        Express.js
+            │
+ Route → Controller → Service
+            │
+       PostgreSQL
 ```
 
 ---
 
-## Main Modules
+# Main Modules
 
 - Authentication Module
 - User Management
-- Course Module
+- Role Management
+- Course Management
+- Course Sections
+- Video Module
 - Enrollment Module
-- Progress Tracking Module
+- Progress Tracking
 - Comment Module
-- Recommendation Module
+- Course Like Module
+- File Upload Module
+- Certificate Module
+- Rule-Based Recommendation Engine
+- Admin Dashboard
+- Teacher Dashboard
+- Student Dashboard
 
 ---
 
-## Security Features
+# Database
+
+The application uses **PostgreSQL** as its relational database.
+
+The database is designed using normalized relationships to ensure data consistency and maintainability.
+
+Main entities include:
+
+- Users
+- Roles
+- Courses
+- Course Sections
+- Videos
+- Video Watches
+- Enrollments
+- Progress
+- Comments
+- Likes
+- Course Files
+- Certificates
+- Recommendation Rules
+
+---
+
+# Folder Structure
+
+```
+bamika/
+│
+├── client/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── server/
+│   ├── controllers/
+│   ├── services/
+│   ├── routes/
+│   ├── middlewares/
+│   ├── models/
+│   ├── utils/
+│   ├── config/
+│   └── server.js
+│
+├── screenshots/
+│
+├── README.md
+│
+└── package.json
+```
+
+---
+
+# API Design
+
+The backend follows RESTful API principles.
+
+Example endpoints:
+
+```
+POST   /api/auth/login
+POST   /api/auth/register
+
+GET    /api/courses
+POST   /api/courses
+PUT    /api/courses/:id
+DELETE /api/courses/:id
+
+POST   /api/enrollments
+
+GET    /api/progress
+
+POST   /api/comments
+
+POST   /api/likes
+
+GET    /api/recommendations
+```
+
+---
+
+# Security Features
 
 - JWT Authentication
 - Password Hashing
 - Protected Routes
-- Role-Based Access Control
-- Input Validation
+- Role-Based Authorization
+- Request Validation
 - Error Handling
+- Secure REST API Design
 
 ---
 
-## Database
+# Installation
 
-The application uses MongoDB for data storage.
+## Clone the repository
 
-Main collections include:
-
-- Users
-- Courses
-- Enrollments
-- Comments
-- Progress Records
+```bash
+git clone https://github.com/YOUR_USERNAME/bamika.git
+```
 
 ---
 
-## Installation
-
-### Clone the repository
+## Navigate to the project
 
 ```bash
-git clone https://github.com/yourusername/lms-project.git
+cd bamika
 ```
 
-### Navigate to the project
+---
+
+## Install dependencies
+
+### Backend
 
 ```bash
-cd lms-project
-```
-
-### Install dependencies
-
-```bash
+cd server
 npm install
 ```
 
-### Configure environment variables
+### Frontend
 
-Create a `.env` file and configure the required environment variables.
+```bash
+cd ../client
+npm install
+```
+
+---
+
+## Configure Environment Variables
+
+Create a `.env` file inside the **server** directory.
 
 Example:
 
 ```env
-PORT=3000
-MONGODB_URI=your_mongodb_connection
+PORT=5000
+
+DATABASE_URL=your_postgresql_connection_string
+
 JWT_SECRET=your_secret_key
 ```
 
-### Start the application
+---
+
+## Run Backend
 
 ```bash
-npm start
-```
-
-or
-
-```bash
+cd server
 npm run dev
 ```
 
 ---
 
-## Screenshots
+## Run Frontend
 
-You can add screenshots of:
+```bash
+cd client
+npm run dev
+```
 
-- Home Page
-- Login Page
-- Student Dashboard
-- Teacher Dashboard
-- Course Details
-- Progress Tracking
-- Enrollment Page
+---
 
-Example:
+# Screenshots
+
+Create a folder named **screenshots** inside the project root and add images like these:
 
 ```
 screenshots/
-    home.png
-    login.png
-    dashboard.png
+│
+├── home-page.png
+├── login-page.png
+├── register-page.png
+├── student-dashboard.png
+├── teacher-dashboard.png
+├── admin-dashboard.png
+├── course-details.png
+├── video-player.png
+├── progress-page.png
+├── recommendation-page.png
+└── certificate.png
+```
+
+Then display them in the README:
+
+```markdown
+## Home Page
+
+![Home](screenshots/home-page.png)
+
+## Student Dashboard
+
+![Dashboard](screenshots/student-dashboard.png)
+
+## Recommendation System
+
+![Recommendation](screenshots/recommendation-page.png)
 ```
 
 ---
 
-## Future Improvements
+# Future Improvements
 
 Potential future enhancements include:
 
-- Video streaming support
-- Online quizzes and exams
-- Assignment submission
-- Certificate generation
 - Live classes
-- Email notifications
-- Payment gateway integration
-- Real-time chat
-- Advanced analytics
-- AI-powered course recommendations
+- Online quizzes
+- Assignment submission
+- Notifications
+- Search and filtering
+- Course ratings
+- Email verification
+- Password recovery
+- AI-powered recommendations
+- Docker deployment
+- CI/CD pipeline
 
 ---
 
-## Learning Outcomes
+# Skills Demonstrated
 
-Through this project, I gained practical experience in:
+This project demonstrates practical experience in:
 
-- Full-stack web development
-- RESTful API design
-- Authentication and Authorization
-- Database modeling
-- MVC Architecture
-- Git version control
-- Responsive web design
-- Software debugging
-- Project organization
-- Clean code practices
+- Full-Stack Web Development
+- PERN Stack Development
+- PostgreSQL Database Design
+- RESTful API Development
+- Authentication & Authorization
+- Role-Based Access Control
+- Backend Architecture
+- Frontend Development with React
+- TypeScript Development
+- Responsive UI Design
+- Git Version Control
+- Software Engineering Principles
+- Debugging & Problem Solving
 
 ---
 
-## Author
+# Author
 
 **Jawad**
 
 Computer Engineering Graduate
 
 GitHub:
+
 https://github.com/jawad-amiri
 
 ---
 
-## License
+# License
 
-This project was developed for educational purposes as a graduation project.
+This project was developed as a Computer Engineering graduation project for educational purposes.
